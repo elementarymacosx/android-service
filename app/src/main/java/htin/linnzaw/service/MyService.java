@@ -30,10 +30,11 @@ public class MyService extends Service
     }
 
     @Override
-    public void onStart(Intent intent, int startid)
+    public int onStartCommand(Intent intent, int flags, int startid)
     {
         Toast.makeText(this, "Service  Started", Toast.LENGTH_SHORT).show();
         mediaplayer.start();
+        return startid;
     }
 
     @Override
